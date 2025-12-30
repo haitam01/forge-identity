@@ -9,9 +9,9 @@ interface ForgeWordmarkProps {
 /**
  * FORGE WORDMARK
  * 
- * Industrial, bold, all-caps custom letterforms
- * Sharp edges, geometric construction
- * Premium and timeless
+ * Custom geometric sans-serif letterforms
+ * All caps, industrial, sharp edges
+ * Pairs seamlessly with the F symbol
  */
 export const ForgeWordmark: FC<ForgeWordmarkProps> = ({ 
   size = 200, 
@@ -19,12 +19,13 @@ export const ForgeWordmark: FC<ForgeWordmarkProps> = ({
   color = "white"
 }) => {
   const colorMap = {
-    white: "hsl(0 0% 95%)",
-    black: "hsl(0 0% 4%)",
-    steel: "hsl(0 0% 55%)",
+    white: "#FFFFFF",
+    black: "#000000",
+    steel: "#5A5A5A",
   };
 
   const fillColor = colorMap[color];
+  const cutColor = color === "white" ? "#000000" : color === "black" ? "#FFFFFF" : "#3A3A3A";
 
   return (
     <svg
@@ -34,7 +35,7 @@ export const ForgeWordmark: FC<ForgeWordmarkProps> = ({
       className={className}
       style={{ width: size, height: size * 0.2 }}
     >
-      {/* F - with signature cut */}
+      {/* F - with signature diagonal cut */}
       <path
         d="
           M 0 0
@@ -61,7 +62,7 @@ export const ForgeWordmark: FC<ForgeWordmarkProps> = ({
           L 55 0
           Z
         "
-        fill="hsl(0 0% 8%)"
+        fill={cutColor}
       />
 
       {/* O - geometric, squared */}
@@ -133,7 +134,7 @@ export const ForgeWordmark: FC<ForgeWordmarkProps> = ({
         fill={fillColor}
       />
 
-      {/* E - industrial with cuts */}
+      {/* E - industrial */}
       <path
         d="
           M 380 0

@@ -42,21 +42,21 @@ export const ForgeLogo: FC<ForgeLogoProps> = ({
         <defs>
           {/* Steel gradient - vertical */}
           <linearGradient id="steelGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="hsl(0 0% 90%)" />
-            <stop offset="50%" stopColor="hsl(0 0% 75%)" />
-            <stop offset="100%" stopColor="hsl(0 0% 55%)" />
+            <stop offset="0%" stopColor="#FFFFFF" />
+            <stop offset="50%" stopColor="#AAAAAA" />
+            <stop offset="100%" stopColor="#5A5A5A" />
           </linearGradient>
           
           {/* Cut shadow gradient */}
           <linearGradient id="cutShadow" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(0 0% 15%)" />
-            <stop offset="100%" stopColor="hsl(0 0% 5%)" />
+            <stop offset="0%" stopColor="#1A1A1A" />
+            <stop offset="100%" stopColor="#000000" />
           </linearGradient>
 
           {/* Ember accent gradient */}
           <linearGradient id="emberGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="hsl(25 100% 55%)" />
-            <stop offset="100%" stopColor="hsl(15 80% 40%)" />
+            <stop offset="0%" stopColor="#FF7A2A" />
+            <stop offset="100%" stopColor="#FF5A00" />
           </linearGradient>
         </defs>
 
@@ -110,7 +110,7 @@ export const ForgeLogo: FC<ForgeLogoProps> = ({
             L 73 14
             Z
           "
-          fill="hsl(0 0% 8%)"
+          fill="#000000"
         />
 
         {/* Subtle ember accent line at the cut edge */}
