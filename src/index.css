@@ -40,12 +40,13 @@
 
     --radius: 0px;
 
-    /* Custom FORGE tokens */
-    --forge-black: 0 0% 4%;
-    --forge-steel: 0 0% 30%;
-    --forge-steel-light: 0 0% 75%;
-    --forge-ember: 20 85% 45%;
-    --forge-ember-glow: 25 100% 55%;
+    /* Custom FORGE tokens - Exact Brand Colors */
+    --forge-black: 0 0% 0%;           /* #000000 Matte Black */
+    --forge-steel: 0 0% 35%;          /* #5A5A5A Steel Gray */
+    --forge-steel-light: 0 0% 75%;    /* Light Steel */
+    --forge-white: 0 0% 100%;         /* #FFFFFF Pure White */
+    --forge-ember: 21 100% 50%;       /* #FF5A00 Burnt Orange */
+    --forge-ember-glow: 25 100% 60%;
 
     /* Gradients */
     --gradient-steel: linear-gradient(180deg, hsl(0 0% 20%) 0%, hsl(0 0% 8%) 100%);

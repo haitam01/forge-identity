@@ -9,8 +9,15 @@ interface ForgeLogoMinimalProps {
 /**
  * MINIMAL FORGE "F" LOGO
  * 
+ * Standalone F symbol for apps, clothing tags, gym branding
  * Single color version for maximum versatility
- * The cut is the signature - everything else is secondary
+ * The diagonal cut is the signature
+ * 
+ * Brand Colors:
+ * - Black: #000000
+ * - White: #FFFFFF  
+ * - Steel: #5A5A5A
+ * - Ember: #FF5A00
  */
 export const ForgeLogoMinimal: FC<ForgeLogoMinimalProps> = ({ 
   size = 100, 
@@ -18,10 +25,10 @@ export const ForgeLogoMinimal: FC<ForgeLogoMinimalProps> = ({
   color = "white"
 }) => {
   const colorMap = {
-    white: "hsl(0 0% 95%)",
-    black: "hsl(0 0% 4%)",
-    steel: "hsl(0 0% 55%)",
-    ember: "hsl(20 85% 45%)",
+    white: "#FFFFFF",
+    black: "#000000",
+    steel: "#5A5A5A",
+    ember: "#FF5A00",
   };
 
   const fillColor = colorMap[color];
@@ -36,7 +43,14 @@ export const ForgeLogoMinimal: FC<ForgeLogoMinimalProps> = ({
     >
       {/* 
         THE FORGED F - Minimal Version
-        Pure shape, no gradients, just the cut
+        
+        Structure:
+        - Vertical spine: solid, unbroken
+        - Top bar: strong, full width
+        - Middle bar: shorter, aggressive
+        - Signature cut: diagonal slice in top-right
+        
+        Proportions: slightly wide for strength
       */}
       <path
         d="

@@ -3,6 +3,7 @@ import { ForgeLogoMinimal } from "@/components/ForgeLogoMinimal";
 import { ForgeWordmark } from "@/components/ForgeWordmark";
 import { ForgeLogoFull } from "@/components/ForgeLogoFull";
 import { ForgeAppIcon } from "@/components/ForgeAppIcon";
+import { ForgeBrandGuidelines } from "@/components/ForgeBrandGuidelines";
 
 const Index = () => {
   return (
@@ -237,7 +238,7 @@ const Index = () => {
               <div className="aspect-square bg-forge-black border-2 border-forge-steel/30 rounded-lg flex items-end p-6 transition-all duration-300 group-hover:border-forge-steel/50">
                 <div>
                   <p className="text-forge-white font-heading text-xl">Matte Black</p>
-                  <p className="text-forge-steel text-sm mt-1 font-mono">#0A0A0A</p>
+                  <p className="text-forge-steel text-sm mt-1 font-mono">#000000</p>
                   <p className="text-forge-steel text-xs mt-1">Primary Background</p>
                 </div>
               </div>
@@ -247,9 +248,9 @@ const Index = () => {
             <div className="group">
               <div className="aspect-square bg-forge-steel rounded-lg flex items-end p-6 transition-all duration-300 group-hover:scale-[1.02]">
                 <div>
-                  <p className="text-forge-black font-heading text-xl">Steel Gray</p>
-                  <p className="text-forge-black/60 text-sm mt-1 font-mono">#8C8C8C</p>
-                  <p className="text-forge-black/60 text-xs mt-1">Secondary / Text</p>
+                  <p className="text-forge-white font-heading text-xl">Steel Gray</p>
+                  <p className="text-forge-white/60 text-sm mt-1 font-mono">#5A5A5A</p>
+                  <p className="text-forge-white/60 text-xs mt-1">Secondary / Text</p>
                 </div>
               </div>
             </div>
@@ -258,9 +259,9 @@ const Index = () => {
             <div className="group">
               <div className="aspect-square bg-forge-ember rounded-lg flex items-end p-6 transition-all duration-300 group-hover:scale-[1.02]">
                 <div>
-                  <p className="text-forge-white font-heading text-xl">Burnt Orange</p>
-                  <p className="text-forge-white/60 text-sm mt-1 font-mono">#D44D00</p>
-                  <p className="text-forge-white/60 text-xs mt-1">Accent — Use Sparingly</p>
+                  <p className="text-forge-black font-heading text-xl">Burnt Orange</p>
+                  <p className="text-forge-black/60 text-sm mt-1 font-mono">#FF5A00</p>
+                  <p className="text-forge-black/60 text-xs mt-1">Accent — Use Sparingly</p>
                 </div>
               </div>
             </div>
@@ -328,8 +329,23 @@ const Index = () => {
         </div>
       </section>
 
-      {/* The Ultimate Test */}
+      {/* Brand Guidelines */}
       <section className="py-32 px-6 border-t border-forge-steel/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <span className="text-forge-ember text-sm tracking-[0.3em] uppercase">Specifications</span>
+            <h2 className="text-4xl md:text-5xl font-heading mt-4">Brand Guidelines</h2>
+            <p className="mt-6 text-forge-steel-light max-w-2xl mx-auto">
+              Clear spacing rules, minimum sizes, and usage guidelines for consistent brand application.
+            </p>
+          </div>
+
+          <ForgeBrandGuidelines />
+        </div>
+      </section>
+
+      {/* The Ultimate Test */}
+      <section className="py-32 px-6 bg-forge-black/50 border-t border-forge-steel/10">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-forge-ember text-sm tracking-[0.3em] uppercase">The Test</span>
           <h2 className="text-3xl md:text-5xl font-heading mt-6 leading-relaxed">

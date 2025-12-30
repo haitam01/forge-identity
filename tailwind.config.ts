@@ -51,6 +51,7 @@ export default {
           black: "hsl(var(--forge-black))",
           steel: "hsl(var(--forge-steel))",
           "steel-light": "hsl(var(--forge-steel-light))",
+          white: "hsl(var(--forge-white))",
           ember: "hsl(var(--forge-ember))",
           "ember-glow": "hsl(var(--forge-ember-glow))",
         },
