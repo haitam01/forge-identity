@@ -37,34 +37,33 @@ export const ForgeLogoFull: FC<ForgeLogoFullProps> = ({
         style={{ width: size, height: size }}
       >
         {/* F Icon - centered */}
-        <g transform="translate(60, 10)">
+        <g transform="translate(55, 10)">
+          {/* Main F body */}
           <path
             d="
               M 0 0
-              L 55 0
-              L 70 15
+              L 45 0
+              L 45 15
               L 20 15
               L 20 40
-              L 50 40
-              L 50 55
+              L 45 40
+              L 45 55
               L 20 55
               L 20 100
               L 0 100
-              L 0 0
               Z
             "
             fill={fillColor}
           />
-          {/* Signature cut */}
+          {/* Signature triangular cut */}
           <path
             d="
               M 45 0
-              L 55 0
-              L 70 15
-              L 45 0
+              L 80 0
+              L 45 35
               Z
             "
-            fill="hsl(0 0% 8%)"
+            fill={fillColor}
           />
         </g>
 
@@ -97,32 +96,32 @@ export const ForgeLogoFull: FC<ForgeLogoFullProps> = ({
     >
       {/* F Icon */}
       <g transform="translate(0, 0) scale(0.65)">
+        {/* Main F body */}
         <path
           d="
             M 0 0
-            L 55 0
-            L 70 15
+            L 45 0
+            L 45 15
             L 20 15
             L 20 45
-            L 50 45
-            L 50 60
+            L 45 45
+            L 45 60
             L 20 60
             L 20 120
             L 0 120
-            L 0 0
             Z
           "
           fill={fillColor}
         />
+        {/* Signature triangular cut */}
         <path
           d="
             M 45 0
-            L 55 0
-            L 70 15
-            L 45 0
+            L 85 0
+            L 45 40
             Z
           "
-          fill="hsl(0 0% 8%)"
+          fill={fillColor}
         />
       </g>
 

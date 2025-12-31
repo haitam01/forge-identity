@@ -70,16 +70,16 @@ export const ForgeLogo: FC<ForgeLogoProps> = ({
           - Signature cut: diagonal slice in top-right corner
         */}
         
-        {/* Main F shape with signature diagonal cut */}
+        {/* Main F body */}
         <path
           d="
             M 10 0
-            L 75 0
-            L 75 18
+            L 55 0
+            L 55 18
             L 32 18
             L 32 48
-            L 62 48
-            L 62 66
+            L 55 48
+            L 55 66
             L 32 66
             L 32 120
             L 10 120
@@ -89,39 +89,38 @@ export const ForgeLogo: FC<ForgeLogoProps> = ({
           fill="url(#steelGradient)"
         />
 
-        {/* THE SIGNATURE CUT - Hammer strike in top right */}
-        {/* This diagonal cut creates the unique identity */}
+        {/* Signature triangular cut - the anvil/roof shape */}
         <path
           d="
-            M 60 0
-            L 75 0
-            L 75 18
-            L 60 0
+            M 55 0
+            L 90 0
+            L 55 35
+            Z
+          "
+          fill="url(#steelGradient)"
+        />
+
+        {/* Inner shadow on the cut */}
+        <path
+          d="
+            M 57 2
+            L 85 2
+            L 57 30
             Z
           "
           fill="url(#cutShadow)"
+          opacity="0.4"
         />
 
-        {/* Inner cut detail - creates depth */}
-        <path
-          d="
-            M 62 0
-            L 73 0
-            L 73 14
-            Z
-          "
-          fill="#000000"
-        />
-
-        {/* Subtle ember accent line at the cut edge */}
+        {/* Ember accent line at the cut edge */}
         <line
-          x1="60"
+          x1="55"
           y1="0"
-          x2="75"
-          y2="18"
+          x2="55"
+          y2="35"
           stroke="url(#emberGradient)"
           strokeWidth="1"
-          opacity="0.6"
+          opacity="0.5"
         />
 
         {/* Bottom edge detail - subtle forge mark */}

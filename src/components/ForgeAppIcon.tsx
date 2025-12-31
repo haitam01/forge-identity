@@ -49,34 +49,33 @@ export const ForgeAppIcon: FC<ForgeAppIconProps> = ({
       <rect width="100" height="100" rx="20" fill={colors.bg} />
       
       {/* F Icon - centered and optimized for small sizes */}
-      <g transform="translate(22, 15)">
+      <g transform="translate(20, 15)">
+        {/* Main F body */}
         <path
           d="
             M 0 0
-            L 45 0
-            L 56 12
+            L 35 0
+            L 35 12
             L 16 12
             L 16 32
-            L 42 32
-            L 42 44
+            L 35 32
+            L 35 44
             L 16 44
             L 16 70
             L 0 70
-            L 0 0
             Z
           "
           fill={colors.fill}
         />
-        {/* Signature cut - simplified for clarity at small sizes */}
+        {/* Signature triangular cut */}
         <path
           d="
-            M 38 0
-            L 45 0
-            L 56 12
-            L 38 0
+            M 35 0
+            L 60 0
+            L 35 25
             Z
           "
-          fill={colors.cut}
+          fill={colors.fill}
         />
       </g>
     </svg>
