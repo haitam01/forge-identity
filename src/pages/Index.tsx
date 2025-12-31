@@ -4,6 +4,7 @@ import { ForgeWordmark } from "@/components/ForgeWordmark";
 import { ForgeLogoFull } from "@/components/ForgeLogoFull";
 import { ForgeAppIcon } from "@/components/ForgeAppIcon";
 import { ForgeBrandGuidelines } from "@/components/ForgeBrandGuidelines";
+import { ForgeAppMockup, ForgeClothingMockup, ForgeGymMockup } from "@/components/mockups/ForgeMockups";
 
 const Index = () => {
   return (
@@ -307,25 +308,67 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Applications */}
+      {/* Fitness App Mockup */}
+      <section className="py-32 px-6 bg-forge-black/50 border-t border-forge-steel/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-forge-ember text-sm tracking-[0.3em] uppercase">Application</span>
+              <h2 className="text-4xl md:text-5xl font-heading mt-4">
+                Fitness App<br />
+                <span className="text-forge-steel-light">Experience</span>
+              </h2>
+              <p className="mt-8 text-forge-steel-light text-lg leading-relaxed">
+                The FORGE F icon sits prominently in the app header, creating instant brand recognition.
+                The ember accent color guides users through key actions.
+              </p>
+              <ul className="mt-8 space-y-4 text-forge-steel">
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-forge-ember" />
+                  Recognizable at any app icon size
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-forge-ember" />
+                  Ember accents for CTAs
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-2 h-2 bg-forge-ember" />
+                  Dark theme for gym visibility
+                </li>
+              </ul>
+            </div>
+            <ForgeAppMockup />
+          </div>
+        </div>
+      </section>
+
+      {/* Clothing & Merchandise */}
+      <section className="py-32 px-6 border-t border-forge-steel/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-forge-ember text-sm tracking-[0.3em] uppercase">Apparel</span>
+            <h2 className="text-4xl md:text-5xl font-heading mt-4">Clothing & Merch</h2>
+            <p className="mt-6 text-forge-steel-light max-w-2xl mx-auto">
+              The minimal F mark translates perfectly to apparel—bold enough for statement pieces,
+              refined enough for premium tags and labels.
+            </p>
+          </div>
+          <ForgeClothingMockup />
+        </div>
+      </section>
+
+      {/* Gym Environment */}
       <section className="py-32 px-6 bg-forge-black/50 border-t border-forge-steel/10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-forge-ember text-sm tracking-[0.3em] uppercase">Applications</span>
-            <h2 className="text-4xl md:text-5xl font-heading mt-4">Where It Lives</h2>
+            <span className="text-forge-ember text-sm tracking-[0.3em] uppercase">Environment</span>
+            <h2 className="text-4xl md:text-5xl font-heading mt-4">Gym Branding</h2>
+            <p className="mt-6 text-forge-steel-light max-w-2xl mx-auto">
+              Designed to dominate gym walls and inspire during every rep.
+              The logo scales from equipment tags to massive wall installations.
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            {['App Icon', 'Clothing Tags', 'Gym Walls', 'Social Media'].map((item, index) => (
-              <div 
-                key={item}
-                className="aspect-square bg-forge-steel/5 border border-forge-steel/20 rounded-lg flex flex-col items-center justify-center p-6 hover:border-forge-ember/50 transition-colors"
-              >
-                <ForgeLogoMinimal size={50} color={index === 0 ? "ember" : "white"} />
-                <p className="mt-6 text-forge-steel-light text-sm">{item}</p>
-              </div>
-            ))}
-          </div>
+          <ForgeGymMockup />
         </div>
       </section>
 

@@ -52,19 +52,30 @@ export const ForgeLogoMinimal: FC<ForgeLogoMinimalProps> = ({
         
         Proportions: slightly wide for strength
       */}
+      {/* Main F body */}
       <path
         d="
           M 10 0
-          L 60 0
-          L 75 18
+          L 55 0
+          L 55 18
           L 32 18
           L 32 48
-          L 62 48
-          L 62 66
+          L 55 48
+          L 55 66
           L 32 66
           L 32 120
           L 10 120
           L 10 0
+          Z
+        "
+        fill={fillColor}
+      />
+      {/* Signature triangular cut - the anvil/roof shape */}
+      <path
+        d="
+          M 55 0
+          L 90 0
+          L 55 35
           Z
         "
         fill={fillColor}
