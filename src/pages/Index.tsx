@@ -2,6 +2,7 @@ import { ForgeFinalLogo } from "@/components/final/ForgeFinalLogo";
 import { ForgeFinalWordmark } from "@/components/final/ForgeFinalWordmark";
 import { ForgeFinalAssets } from "@/components/final/ForgeFinalAssets";
 import { ForgeFinalHoodie } from "@/components/final/ForgeFinalHoodie";
+import { ForgeTechPack } from "@/components/final/ForgeTechPack";
 
 const Index = () => {
   return (
@@ -44,6 +45,18 @@ const Index = () => {
             <h2 className="text-4xl font-heading mt-4">Hero Hoodie — Locked</h2>
           </div>
           <ForgeFinalHoodie />
+        </div>
+      </section>
+
+      {/* Tech Pack — Factory Ready */}
+      <section className="py-24 px-6 bg-white text-black border-t border-forge-steel/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-forge-ember text-xs tracking-[0.4em] uppercase">03</span>
+            <h2 className="text-4xl font-heading mt-4 text-black">Tech Pack — Factory Ready</h2>
+            <p className="text-gray-500 mt-2">Complete manufacturing specifications</p>
+          </div>
+          <ForgeTechPack />
         </div>
       </section>
 
