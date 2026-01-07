@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Preloader } from "@/components/launch/Preloader";
 import { HeroSection } from "@/components/launch/HeroSection";
 import { LogoShowcase } from "@/components/launch/LogoShowcase";
 import { ProductShowcase } from "@/components/launch/ProductShowcase";
@@ -14,29 +16,34 @@ import { Footer } from "@/components/launch/Footer";
  */
 
 const Index = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <div className="min-h-screen bg-forge-black text-forge-white overflow-x-hidden">
-      {/* Hero — Hammer Strike Reveal */}
-      <HeroSection />
+    <>
+      <Preloader onComplete={() => setIsLoaded(true)} />
+      <div className="min-h-screen bg-forge-black text-forge-white overflow-x-hidden">
+        {/* Hero — Hammer Strike Reveal */}
+        <HeroSection />
 
-      {/* Logo System — Premium Showcase */}
-      <LogoShowcase />
+        {/* Logo System — Premium Showcase */}
+        <LogoShowcase />
 
-      {/* Hero Hoodie — Product Presentation */}
-      <ProductShowcase />
+        {/* Hero Hoodie — Product Presentation */}
+        <ProductShowcase />
 
-      {/* Athlete Vision — Photography Direction */}
-      <AthleteSection />
+        {/* Athlete Vision — Photography Direction */}
+        <AthleteSection />
 
-      {/* Gym Environment — Brand in Context */}
-      <GymEnvironment />
+        {/* Gym Environment — Brand in Context */}
+        <GymEnvironment />
 
-      {/* Final Statement — Closing Manifesto */}
-      <FinalStatement />
+        {/* Final Statement — Closing Manifesto */}
+        <FinalStatement />
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </>
   );
 };
 
