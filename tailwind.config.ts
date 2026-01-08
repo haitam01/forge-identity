@@ -49,15 +49,18 @@ export default {
         },
         forge: {
           black: "hsl(var(--forge-black))",
+          obsidian: "hsl(var(--forge-obsidian))",
           steel: "hsl(var(--forge-steel))",
           "steel-light": "hsl(var(--forge-steel-light))",
           white: "hsl(var(--forge-white))",
           ember: "hsl(var(--forge-ember))",
-          "ember-glow": "hsl(var(--forge-ember-glow))",
+          "ember-hot": "hsl(var(--forge-ember-hot))",
+          "ember-deep": "hsl(var(--forge-ember-deep))",
         },
       },
       fontFamily: {
-        display: ["Oswald", "sans-serif"],
+        display: ["Bebas Neue", "Oswald", "sans-serif"],
+        heading: ["Oswald", "sans-serif"],
         body: ["Barlow", "sans-serif"],
       },
       borderRadius: {
@@ -66,9 +69,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        steel: "var(--shadow-steel)",
+        hero: "var(--shadow-hero)",
         ember: "var(--shadow-ember)",
-        cut: "var(--shadow-cut)",
+        card: "var(--shadow-card)",
+        inner: "var(--shadow-inner)",
       },
       keyframes: {
         "accordion-down": {
@@ -79,10 +83,21 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "ember-pulse": {
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
+        },
+        "forge-strike": {
+          "0%": { opacity: "0", transform: "translateY(-100px) scale(1.2)" },
+          "60%": { transform: "translateY(10px) scale(0.95)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "ember-pulse": "ember-pulse 3s ease-in-out infinite",
+        "forge-strike": "forge-strike 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

@@ -1,167 +1,237 @@
 import { FC, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { ForgeFinalLogo } from "@/components/final/ForgeFinalLogo";
 import { ForgeFinalWordmark } from "@/components/final/ForgeFinalWordmark";
 import { ForgeFinalAppIcon } from "@/components/final/ForgeFinalAppIcon";
 
 /**
- * FORGE LOGO SHOWCASE — Premium presentation
- * With depth, shadows, and contextual mockups
+ * FORGE LOGO SHOWCASE — Nike/Adidas Level Presentation
+ * Cinematic reveal with premium depth effects
  */
 
 export const LogoShowcase: FC = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const containerRef = useRef(null);
+  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section ref={ref} className="py-32 px-6 relative overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 opacity-[0.02]" 
-        style={{
-          backgroundImage: `radial-gradient(circle at 50% 50%, hsl(0 0% 20%) 1px, transparent 1px)`,
-          backgroundSize: '24px 24px'
-        }}
+    <section ref={containerRef} className="py-40 px-6 relative overflow-hidden">
+      {/* Premium background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-forge-obsidian to-background" />
+      
+      {/* Animated grid */}
+      <motion.div 
+        className="absolute inset-0 grid-pattern"
+        style={{ y: parallaxY }}
       />
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section header */}
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="text-forge-ember text-xs tracking-[0.4em] uppercase font-medium">01 — Identity</span>
-          <h2 className="text-5xl md:text-6xl font-heading mt-4 forge-text-gradient">The Symbol</h2>
-        </motion.div>
+      {/* Ember ambient glow */}
+      <motion.div
+        className="absolute left-1/2 top-1/3 -translate-x-1/2 w-[600px] h-[600px] rounded-full"
+        style={{
+          background: "radial-gradient(circle, hsl(18 100% 50% / 0.08) 0%, transparent 60%)"
+        }}
+        animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.8, 0.5] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
 
-        {/* Primary logo with 3D depth effect */}
-        <motion.div
-          className="flex justify-center mb-24"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 1, delay: 0.2 }}
-        >
-          <div className="relative group">
-            {/* Shadow layers for depth */}
-            <div className="absolute inset-0 translate-x-4 translate-y-4 opacity-20">
-              <ForgeFinalLogo size={280} color="white" />
-            </div>
-            <div className="absolute inset-0 translate-x-2 translate-y-2 opacity-40">
-              <ForgeFinalLogo size={280} color="white" />
-            </div>
-            {/* Main logo */}
-            <div className="relative">
-              <ForgeFinalLogo size={280} color="white" />
-            </div>
-            {/* Hover glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <div className="absolute inset-0 blur-3xl bg-forge-ember/20" />
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Logo variations grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
-          {/* Black on White */}
-          <motion.div
-            className="group"
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="bg-white rounded-sm p-12 flex items-center justify-center h-64 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-white" />
-              <ForgeFinalLogo size={100} color="black" className="relative z-10" />
-            </div>
-            <p className="mt-4 text-forge-steel text-sm">Primary — Light</p>
-          </motion.div>
-
-          {/* White on Black */}
-          <motion.div
-            className="group"
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="bg-black rounded-sm p-12 flex items-center justify-center h-64 relative overflow-hidden border border-forge-steel/20">
-              <div className="absolute inset-0 bg-gradient-to-br from-forge-steel/5 to-transparent" />
-              <ForgeFinalLogo size={100} color="white" className="relative z-10" />
-            </div>
-            <p className="mt-4 text-forge-steel text-sm">Primary — Dark</p>
-          </motion.div>
-
-          {/* Embossed effect */}
-          <motion.div
-            className="group"
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.5 }}
-          >
-            <div 
-              className="rounded-sm p-12 flex items-center justify-center h-64 relative overflow-hidden"
-              style={{
-                background: 'linear-gradient(145deg, hsl(0 0% 15%), hsl(0 0% 8%))',
-              }}
-            >
-              {/* Brushed metal texture */}
-              <div 
-                className="absolute inset-0 opacity-30"
-                style={{
-                  backgroundImage: `repeating-linear-gradient(
-                    90deg,
-                    transparent,
-                    transparent 1px,
-                    hsl(0 0% 30%) 1px,
-                    hsl(0 0% 30%) 2px
-                  )`
-                }}
-              />
-              {/* Embossed logo */}
-              <div className="relative" style={{ filter: 'drop-shadow(1px 1px 0 hsl(0 0% 25%)) drop-shadow(-1px -1px 0 hsl(0 0% 5%))' }}>
-                <ForgeFinalLogo size={100} color="white" className="opacity-10" />
-              </div>
-            </div>
-            <p className="mt-4 text-forge-steel text-sm">Embossed — Metal</p>
-          </motion.div>
-        </div>
-
-        {/* Logo + Wordmark lockup */}
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section header with stagger animation */}
         <motion.div
           className="text-center mb-24"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-8 p-12 rounded-sm border border-forge-steel/10 bg-forge-steel/5">
-            <ForgeFinalLogo size={80} color="white" />
-            <div className="w-[1px] h-16 bg-forge-steel/20" />
-            <ForgeFinalWordmark size={200} color="white" />
-          </div>
-          <p className="mt-6 text-forge-steel text-sm">Horizontal Lockup</p>
+          <motion.span 
+            className="inline-block text-forge-ember text-xs tracking-[0.5em] uppercase font-medium"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            01 — Brand Identity
+          </motion.span>
+          
+          <motion.h2 
+            className="text-6xl md:text-8xl forge-text-hero mt-6"
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <span className="forge-text-gradient">THE MARK</span>
+          </motion.h2>
+
+          <motion.p
+            className="mt-6 text-forge-steel max-w-lg mx-auto text-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            A symbol forged in fire. Recognized instantly. Remembered forever.
+          </motion.p>
         </motion.div>
 
-        {/* App icons */}
+        {/* Hero logo with layered depth effect */}
         <motion.div
-          className="flex flex-wrap justify-center gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          className="flex justify-center mb-32"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+          transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="text-center">
-            <ForgeFinalAppIcon size={120} variant="rounded" theme="dark" />
-            <p className="mt-3 text-forge-steel text-xs">iOS</p>
+          <div className="relative group">
+            {/* Multi-layer shadow for 3D depth */}
+            {[0.15, 0.3, 0.5].map((opacity, i) => (
+              <motion.div 
+                key={i}
+                className="absolute inset-0"
+                style={{ 
+                  transform: `translate(${(i + 1) * 8}px, ${(i + 1) * 8}px)`,
+                  opacity 
+                }}
+                animate={{ 
+                  transform: [
+                    `translate(${(i + 1) * 8}px, ${(i + 1) * 8}px)`,
+                    `translate(${(i + 1) * 6}px, ${(i + 1) * 6}px)`,
+                    `translate(${(i + 1) * 8}px, ${(i + 1) * 8}px)`,
+                  ]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <ForgeFinalLogo size={320} color="white" />
+              </motion.div>
+            ))}
+            
+            {/* Main logo */}
+            <motion.div 
+              className="relative"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+            >
+              <ForgeFinalLogo size={320} color="white" />
+            </motion.div>
+
+            {/* Hover ember glow */}
+            <motion.div 
+              className="absolute inset-0 rounded-full blur-3xl bg-forge-ember/0 group-hover:bg-forge-ember/20 transition-all duration-700 -z-10"
+              style={{ transform: 'scale(1.5)' }}
+            />
           </div>
-          <div className="text-center">
-            <ForgeFinalAppIcon size={120} variant="square" theme="dark" />
-            <p className="mt-3 text-forge-steel text-xs">Android</p>
+        </motion.div>
+
+        {/* Logo application grid - premium cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-32">
+          {[
+            { bg: "white", color: "black", label: "Light Application", desc: "On white backgrounds" },
+            { bg: "black", color: "white", label: "Dark Application", desc: "On dark backgrounds" },
+            { bg: "ember", color: "black", label: "Brand Accent", desc: "For impact moments" },
+          ].map((variant, i) => (
+            <motion.div
+              key={variant.label}
+              className="group"
+              initial={{ opacity: 0, y: 60 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 + i * 0.1 }}
+            >
+              <div 
+                className={`
+                  h-72 rounded-sm flex items-center justify-center relative overflow-hidden
+                  hover-lift cursor-pointer
+                  ${variant.bg === "white" ? "bg-white" : ""}
+                  ${variant.bg === "black" ? "bg-black border border-forge-steel/20" : ""}
+                  ${variant.bg === "ember" ? "bg-gradient-to-br from-forge-ember to-forge-ember-deep" : ""}
+                `}
+              >
+                {/* Subtle inner shadow */}
+                <div className="absolute inset-0 shadow-inner opacity-50" />
+                
+                <motion.div
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <ForgeFinalLogo 
+                    size={100} 
+                    color={variant.color as "black" | "white"} 
+                  />
+                </motion.div>
+              </div>
+              <div className="mt-5">
+                <h4 className="text-white font-heading text-lg">{variant.label}</h4>
+                <p className="text-forge-steel text-sm mt-1">{variant.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Horizontal lockup - signature presentation */}
+        <motion.div
+          className="mb-32"
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.7 }}
+        >
+          <div className="forge-glass p-16 flex flex-col md:flex-row items-center justify-center gap-12 relative overflow-hidden">
+            {/* Animated border */}
+            <motion.div 
+              className="absolute inset-0 opacity-0 group-hover:opacity-100"
+              style={{
+                background: 'linear-gradient(90deg, transparent, hsl(18 100% 50% / 0.3), transparent)'
+              }}
+              animate={{ x: ['-100%', '100%'] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            
+            <ForgeFinalLogo size={100} color="white" />
+            
+            <div className="hidden md:block w-px h-20 bg-gradient-to-b from-transparent via-forge-steel/40 to-transparent" />
+            
+            <ForgeFinalWordmark size={280} color="white" />
           </div>
-          <div className="text-center">
-            <ForgeFinalAppIcon size={120} variant="rounded" theme="light" />
-            <p className="mt-3 text-forge-steel text-xs">Light Mode</p>
+          <p className="text-center mt-6 text-forge-steel text-sm tracking-widest uppercase">Primary Lockup</p>
+        </motion.div>
+
+        {/* App icon showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <h3 className="text-center text-2xl font-heading text-forge-steel-light mb-12">Digital Presence</h3>
+          
+          <div className="flex flex-wrap justify-center gap-10">
+            {[
+              { variant: "rounded" as const, theme: "dark" as const, label: "iOS App" },
+              { variant: "square" as const, theme: "dark" as const, label: "Android" },
+              { variant: "rounded" as const, theme: "light" as const, label: "Light Mode" },
+            ].map((icon, i) => (
+              <motion.div 
+                key={icon.label}
+                className="text-center group"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: 0.9 + i * 0.1 }}
+              >
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                  className="ember-border p-1 rounded-2xl"
+                >
+                  <ForgeFinalAppIcon size={120} variant={icon.variant} theme={icon.theme} />
+                </motion.div>
+                <p className="mt-4 text-forge-steel text-sm group-hover:text-white transition-colors">{icon.label}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
       </div>
+
+      {/* Noise overlay */}
+      <div className="absolute inset-0 noise-overlay pointer-events-none" />
     </section>
   );
 };
