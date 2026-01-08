@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,66 +6,66 @@
 
 @layer base {
   :root {
-    /* FORGE Design System - Industrial Dark Theme */
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
+    /* FORGE Design System - Elite Athletic Brand */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 96%;
 
     /* Steel Gray - Primary */
-    --primary: 0 0% 85%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 0 0% 88%;
+    --primary-foreground: 0 0% 3%;
 
     /* Dark Steel - Secondary */
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 85%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 88%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 50%;
 
-    /* Burnt Orange / Ember - Accent */
-    --accent: 20 85% 45%;
-    --accent-foreground: 0 0% 98%;
+    /* Ember Orange - Signature Accent */
+    --accent: 18 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 20 85% 45%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 18 100% 50%;
 
     --radius: 0px;
 
-    /* Custom FORGE tokens - Exact Brand Colors */
-    --forge-black: 0 0% 0%;           /* #000000 Matte Black */
-    --forge-steel: 0 0% 35%;          /* #5A5A5A Steel Gray */
-    --forge-steel-light: 0 0% 75%;    /* Light Steel */
-    --forge-white: 0 0% 100%;         /* #FFFFFF Pure White */
-    --forge-ember: 21 100% 50%;       /* #FF5A00 Burnt Orange */
-    --forge-ember-glow: 25 100% 60%;
+    /* FORGE Brand Tokens - Competition Grade */
+    --forge-black: 0 0% 0%;
+    --forge-obsidian: 0 0% 3%;
+    --forge-steel: 0 0% 40%;
+    --forge-steel-light: 0 0% 70%;
+    --forge-white: 0 0% 100%;
+    --forge-ember: 18 100% 50%;
+    --forge-ember-hot: 25 100% 60%;
+    --forge-ember-deep: 12 100% 40%;
 
-    /* Gradients */
-    --gradient-steel: linear-gradient(180deg, hsl(0 0% 20%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-ember: linear-gradient(135deg, hsl(20 85% 45%) 0%, hsl(15 80% 35%) 100%);
-    --gradient-forge: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(0 0% 4%) 100%);
+    /* Premium Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 0%) 0%, hsl(0 0% 5%) 50%, hsl(0 0% 3%) 100%);
+    --gradient-ember: linear-gradient(135deg, hsl(18 100% 50%) 0%, hsl(12 100% 40%) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(0 0% 15%) 0%, hsl(0 0% 5%) 100%);
+    --gradient-premium: radial-gradient(ellipse at 50% 0%, hsl(0 0% 12%) 0%, hsl(0 0% 3%) 70%);
 
-    /* Shadows */
-    --shadow-steel: 0 20px 60px -15px hsl(0 0% 0% / 0.8);
-    --shadow-ember: 0 0 40px hsl(20 85% 45% / 0.3);
-    --shadow-cut: inset 0 2px 4px hsl(0 0% 0% / 0.5);
+    /* Elite Shadows */
+    --shadow-hero: 0 50px 100px -20px hsl(0 0% 0% / 0.9);
+    --shadow-ember: 0 0 80px hsl(18 100% 50% / 0.4);
+    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.8);
+    --shadow-inner: inset 0 2px 20px hsl(0 0% 0% / 0.6);
 
     /* Typography */
-    --font-display: 'Oswald', sans-serif;
+    --font-display: 'Bebas Neue', 'Oswald', sans-serif;
+    --font-heading: 'Oswald', sans-serif;
     --font-body: 'Barlow', sans-serif;
-  }
-
-  .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 95%;
   }
 }
 
@@ -81,42 +81,157 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
+    font-family: var(--font-heading);
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
+  }
+
+  /* Custom scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 5%);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--forge-ember));
+    border-radius: 0;
   }
 }
 
 @layer components {
+  /* FORGE Signature Text Effects */
   .forge-text-gradient {
-    background: linear-gradient(180deg, hsl(0 0% 95%) 0%, hsl(0 0% 65%) 100%);
+    background: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 60%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .forge-ember-text {
-    background: linear-gradient(135deg, hsl(25 100% 55%) 0%, hsl(15 80% 40%) 100%);
+  .forge-text-ember {
+    background: linear-gradient(135deg, hsl(25 100% 60%) 0%, hsl(18 100% 50%) 50%, hsl(12 100% 45%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .forge-steel-surface {
-    background: var(--gradient-steel);
-    border: 1px solid hsl(0 0% 20%);
+  .forge-text-hero {
+    font-family: var(--font-display);
+    letter-spacing: 0.08em;
+    line-height: 0.9;
   }
 
+  /* Signature Surface Treatments */
+  .forge-glass {
+    background: linear-gradient(135deg, hsl(0 0% 10% / 0.8) 0%, hsl(0 0% 5% / 0.9) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 20% / 0.5);
+  }
+
+  .forge-metal {
+    background: linear-gradient(180deg, hsl(0 0% 18%) 0%, hsl(0 0% 8%) 100%);
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 30% / 0.5),
+      inset 0 -1px 0 hsl(0 0% 0% / 0.5),
+      0 20px 40px -10px hsl(0 0% 0% / 0.8);
+  }
+
+  .forge-ember-glow {
+    box-shadow: 
+      0 0 20px hsl(18 100% 50% / 0.3),
+      0 0 60px hsl(18 100% 50% / 0.2),
+      0 0 100px hsl(18 100% 50% / 0.1);
+  }
+
+  /* Geometric Cut Patterns */
   .forge-cut {
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
   }
 
-  .forge-cut-reverse {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%, 0 85%);
+  .forge-cut-left {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 10% 100%, 0 85%);
+  }
+
+  .forge-cut-diamond {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  /* Nike-Style Underline Animation */
+  .forge-link {
+    position: relative;
+    display: inline-block;
+  }
+
+  .forge-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: hsl(var(--forge-ember));
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .forge-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Premium Button */
+  .forge-btn {
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    border: 1px solid hsl(var(--forge-white) / 0.3);
+    padding: 1rem 2.5rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.875rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .forge-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: hsl(var(--forge-ember));
+    transform: translateX(-101%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .forge-btn:hover {
+    border-color: hsl(var(--forge-ember));
+  }
+
+  .forge-btn:hover::before {
+    transform: translateX(0);
+  }
+
+  .forge-btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Divider Lines */
+  .forge-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--forge-steel)) 50%, transparent 100%);
+  }
+
+  .forge-divider-ember {
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, hsl(var(--forge-ember)) 50%, transparent 100%);
   }
 }
 
@@ -125,85 +240,194 @@
     text-wrap: balance;
   }
 
+  /* Signature Animations */
+  .animate-forge-strike {
+    animation: forge-strike 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-forge-reveal {
+    animation: forge-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
   .animate-ember-pulse {
     animation: ember-pulse 3s ease-in-out infinite;
   }
 
-  .animate-forge-reveal {
-    animation: forge-reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  .animate-ember-breathe {
+    animation: ember-breathe 4s ease-in-out infinite;
   }
 
-  .animate-cut-in {
-    animation: cut-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
-  .animate-heat-shimmer {
-    animation: heat-shimmer 4s ease-in-out infinite;
+  .animate-scan-line {
+    animation: scan-line 3s linear infinite;
   }
 
-  /* Noise texture for premium feel */
-  .noise-overlay {
-    position: relative;
+  .animate-heat-wave {
+    animation: heat-wave 2s ease-in-out infinite;
   }
 
+  /* Premium Noise Texture */
   .noise-overlay::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
     pointer-events: none;
-    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+
+  /* Vignette Effect */
+  .vignette::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, hsl(0 0% 0% / 0.6) 100%);
+    pointer-events: none;
+  }
+
+  /* Grid Pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(0 0% 20% / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 20% / 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  /* Ember Border Glow */
+  .ember-border {
+    position: relative;
+  }
+
+  .ember-border::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, hsl(var(--forge-ember)) 0%, transparent 50%, hsl(var(--forge-ember)) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .ember-border:hover::before {
+    opacity: 1;
   }
 }
 
-@keyframes ember-pulse {
-  0%, 100% {
-    opacity: 0.6;
-    filter: blur(20px);
+/* Signature Keyframes */
+@keyframes forge-strike {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(1.2);
   }
-  50% {
+  60% {
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
     opacity: 1;
-    filter: blur(30px);
+    transform: translateY(0) scale(1);
   }
 }
 
 @keyframes forge-reveal {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
+    filter: blur(10px);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
+    filter: blur(0);
   }
 }
 
-@keyframes cut-in {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px) skewX(-5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) skewX(0);
-  }
-}
-
-@keyframes heat-shimmer {
+@keyframes ember-pulse {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.4;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
 
-/* Smooth scroll behavior */
+@keyframes ember-breathe {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px hsl(18 100% 50% / 0.2),
+      0 0 60px hsl(18 100% 50% / 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px hsl(18 100% 50% / 0.4),
+      0 0 100px hsl(18 100% 50% / 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes heat-wave {
+  0%, 100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+  50% {
+    filter: blur(1px);
+    opacity: 0.9;
+  }
+}
+
+/* Premium Hover Effects */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -20px hsl(0 0% 0% / 0.8);
+}
+
+.hover-ember {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-ember:hover {
+  box-shadow: 0 0 30px hsl(18 100% 50% / 0.3);
+  border-color: hsl(var(--forge-ember));
+}
+
+/* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Hide scrollbar but keep functionality */
+/* Selection color */
+::selection {
+  background: hsl(var(--forge-ember));
+  color: hsl(var(--forge-white));
+}
+
+/* Hide scrollbar utility */
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
