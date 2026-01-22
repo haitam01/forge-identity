@@ -7,6 +7,7 @@ export interface Product {
   subcategory: string;
   price: number;
   image: string;
+  images?: string[];
   description: string;
   sizes?: string[];
   colors?: string[];
@@ -23,6 +24,15 @@ import forgeMenHoodie from '@/assets/forge-men-hoodie.jpg';
 import forgeMenTank from '@/assets/forge-men-tank.jpg';
 import forgeDuffleBag from '@/assets/forge-duffle-bag.jpg';
 import forgeAccessories from '@/assets/forge-accessories.jpg';
+// New action & angle shots
+import forgeWomenDeadlift from '@/assets/forge-women-deadlift.jpg';
+import forgeWomenBoxing from '@/assets/forge-women-boxing.jpg';
+import forgeWomenStretch from '@/assets/forge-women-stretch.jpg';
+import forgeWomenHoodieBack from '@/assets/forge-women-hoodie-back.jpg';
+import forgeMenActionRopes from '@/assets/forge-men-action-ropes.jpg';
+import forgeMenPullup from '@/assets/forge-men-pullup.jpg';
+import forgeMenHoodieFront from '@/assets/forge-men-hoodie-front.jpg';
+import forgeBackpackDetail from '@/assets/forge-backpack-detail.jpg';
 
 export const products: Product[] = [
   // Women's Collection
@@ -33,6 +43,7 @@ export const products: Product[] = [
     subcategory: 'Sets',
     price: 145,
     image: forgeWomenLeggingsBra,
+    images: [forgeWomenLeggingsBra, forgeWomenDeadlift, forgeWomenStretch],
     description: 'High-waist compression leggings with matching sports bra. Engineered for maximum performance.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Matte Black', 'Steel Gray'],
@@ -45,6 +56,7 @@ export const products: Product[] = [
     subcategory: 'Hoodies',
     price: 120,
     image: forgeWomenHoodie,
+    images: [forgeWomenHoodie, forgeWomenHoodieBack],
     description: 'Premium heavyweight hoodie. Minimal branding. Maximum warmth.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Matte Black', 'Charcoal'],
@@ -56,6 +68,7 @@ export const products: Product[] = [
     subcategory: 'Long Sleeves',
     price: 85,
     image: forgeWomenLongsleeve,
+    images: [forgeWomenLongsleeve, forgeWomenStretch],
     description: 'Technical long sleeve with thumb holes. Built for endurance.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Matte Black', 'Off-White'],
@@ -71,6 +84,17 @@ export const products: Product[] = [
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: ['Matte Black', 'Charcoal'],
     featured: true,
+  },
+  {
+    id: 'w-005',
+    name: 'FORGE Boxing Short Set',
+    category: 'women',
+    subcategory: 'Shorts',
+    price: 95,
+    image: forgeWomenBoxing,
+    description: 'High-waist training shorts with sports bra. Built for combat sports.',
+    sizes: ['XS', 'S', 'M', 'L', 'XL'],
+    colors: ['Matte Black'],
   },
   // Men's Collection
   {
@@ -92,6 +116,7 @@ export const products: Product[] = [
     subcategory: 'Hoodies',
     price: 130,
     image: forgeMenHoodie,
+    images: [forgeMenHoodie, forgeMenHoodieFront],
     description: 'Industrial weight. Forged under pressure.',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: ['Matte Black', 'Charcoal'],
@@ -104,9 +129,21 @@ export const products: Product[] = [
     subcategory: 'Tanks',
     price: 55,
     image: forgeMenTank,
+    images: [forgeMenTank, forgeMenActionRopes],
     description: 'Cut for movement. Built for intensity.',
     sizes: ['S', 'M', 'L', 'XL', 'XXL'],
     colors: ['Matte Black', 'Off-White'],
+  },
+  {
+    id: 'm-004',
+    name: 'FORGE Compression Long Sleeve',
+    category: 'men',
+    subcategory: 'Long Sleeves',
+    price: 85,
+    image: forgeMenPullup,
+    description: 'Full-length compression for maximum performance.',
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    colors: ['Matte Black', 'Steel Gray'],
   },
   // Accessories
   {
@@ -129,6 +166,16 @@ export const products: Product[] = [
     image: forgeAccessories,
     description: 'Bottle, cap, and essentials. Function first.',
     colors: ['Matte Black', 'Steel Gray'],
+  },
+  {
+    id: 'a-003',
+    name: 'FORGE Tactical Backpack',
+    category: 'accessories',
+    subcategory: 'Bags',
+    price: 195,
+    image: forgeBackpackDetail,
+    description: 'Military-spec materials. Built to endure.',
+    colors: ['Matte Black'],
   },
 ];
 
